@@ -4,16 +4,34 @@ import questionsData from './assets/questions.json';
 import QuizCard from './components/QuizCard.vue';
 import ResultCard from './components/ResultCard.vue';
 
-const questions = ref(questionsData);
+const allQuestions = questionsData;
+const questions = ref([]);
 const currentQuestionIndex = ref(0);
 const score = ref(0);
-const gameState = ref('intro'); // 'intro', 'quiz', 'result'
+const gameState = ref('series-select'); // 'series-select', 'intro', 'quiz', 'result'
+const currentSeries = ref(0);
 
 // Computed
 const currentQuestion = computed(() => questions.value[currentQuestionIndex.value]);
 const totalQuestions = computed(() => questions.value.length);
 
+const seriesList = [
+  { id: 1, name: 'Série 1', range: [0, 10] },
+  { id: 2, name: 'Série 2', range: [10, 20] },
+  { id: 3, name: 'Série 3', range: [20, 30] },
+  { id: 4, name: 'Série 4', range: [30, 40] },
+];
+
 // Methods
+const selectSeries = (seriesId) => {
+  const series = seriesList.find(s => s.id === seriesId);
+  if (series) {
+    currentSeries.value = seriesId;
+    questions.value = allQuestions.slice(series.range[0], series.range[1]);
+    gameState.value = 'intro';
+  }
+};
+
 const startQuiz = () => {
   gameState.value = 'quiz';
   currentQuestionIndex.value = 0;
@@ -33,7 +51,9 @@ const handleAnswer = (key) => {
 };
 
 const restartQuiz = () => {
-  startQuiz();
+  gameState.value = 'series-select';
+  score.value = 0;
+  currentQuestionIndex.value = 0;
 };
 </script>
 
@@ -43,15 +63,36 @@ const restartQuiz = () => {
     
     <main class="content">
       <transition name="fade" mode="out-in">
+        <!-- Series Selection Screen -->
+        <div v-if="gameState === 'series-select'" class="intro-card" key="series">
+          <h1>Choix de la Série</h1>
+          <p>Sélectionnez une série de questions</p>
+          
+          <div class="series-grid">
+            <button 
+              v-for="series in seriesList" 
+              :key="series.id" 
+              class="series-btn"
+              @click="selectSeries(series.id)"
+            >
+              <span class="series-name">{{ series.name }}</span>
+              <span class="series-range">Questions {{ series.range[0] + 1 }}-{{ series.range[1] }}</span>
+            </button>
+          </div>
+        </div>
+
         <!-- Intro Screen -->
-        <div v-if="gameState === 'intro'" class="intro-card" key="intro">
-          <h1>XML QCM Challenge</h1>
-          <p>Test your knowledge of XML, DTD, XSD, XPath and more.</p>
+        <div v-else-if="gameState === 'intro'" class="intro-card" key="intro">
+          <h1>Série {{ currentSeries }}</h1>
+          <p>Prêt à tester vos connaissances ?</p>
           <div class="info-badges">
             <span class="badge">{{ totalQuestions }} Questions</span>
-            <span class="badge">Multiple Choice</span>
+            <span class="badge">Choix Multiple</span>
           </div>
-          <button @click="startQuiz" class="start-btn">Start Quiz</button>
+          <div class="actions">
+             <button @click="gameState = 'series-select'" class="back-btn">Retour</button>
+             <button @click="startQuiz" class="start-btn">Commencer</button>
+          </div>
         </div>
 
         <!-- Quiz Screen -->
@@ -224,5 +265,65 @@ footer {
 .fade-leave-to {
   opacity: 0;
   transform: scale(0.95);
+}
+
+/* Series Selection */
+.series-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.series-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.series-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.series-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.series-range {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 </style>
