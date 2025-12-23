@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const inputFile = path.resolve(__dirname, '../../qcm.txt');
+const inputFile = path.resolve(__dirname, '../qcm.txt');
 const outputFile = path.resolve(__dirname, '../src/assets/questions.json');
 
 // Ensure output directory exists
