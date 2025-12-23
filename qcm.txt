@@ -1,0 +1,328 @@
+**Questions XML et SGBD**
+
+**1) l’ancêtre direct de XML est**
+
+1. a) SGML
+2. b) XHTML
+3. c) HTML
+4. d) MathML
+
+**2) un élément peut être vide**
+
+1. a) Oui
+2. b) Oui, mais à condition qu’il ait au moins un attribut
+3. c) Oui, mais à condition qu’il ait au moins un attribut non optionnel
+4. d) Non
+
+**3) un langage balisé est un langage**
+
+1. a) tellement bien défini qu’on ne peut pas se tromper (comme un chemin balisé)
+2. b) constitué de balises (tags) qui permettent de définir la structure avec les données
+3. c) qui permet instantanément la localisation du dispositif qui exécute le programme
+4. d) qui peut être étendu très facilement, car les balise ne sont pas prédéfinies
+
+**4) Dans l’exemple <auteur ordre= "1">Bernard Werber</auteur>, ordre est**
+
+1. a) un élément
+2. b) une donnée
+3. c) un attribut
+4. d) une entité
+
+**5) Une section CDATA est**
+
+1. a) une section contenant le code source d’un autre langage de programmation
+2. b) une section contenant du texte sans caractères spéciaux ([0-9][a-z][A-Z] uniquement)
+3. c) une section dans laquelle on souhaite désactiver la coloration syntaxique
+4. d) une section contenant du texte qui ne sera pas parsé
+
+**6) Il est possible de valider avec un DTD un XML utilisant un(des) namespace(s)**
+
+1. a) oui, car le DTD comprend la notion de namespace
+2. b) oui avec une entourloupe car le DTD ne comprend pas la notion de namespace
+3. c) non, même si le DTD comprend la notion de namespace
+4. d) non, car le DTD ne comprend pas la notion de namespace
+
+**7) Afin de déclarer un namespace, on l’insère comme attribut d’un élément, précédé de**
+
+1. a) template
+2. b) xmlns
+3. c) namespace
+4. d) xsi (ou xsd)
+
+**8) Le contenu d’un élément NE PEUT PAS être**
+
+1. a) du texte vide (<exemple></exemple>)
+2. b) plusieurs éléments enfants (<ex><enft1>v1</enft1><enft2>v2</enft2></ex>)
+3. c) du texte avec des caractères réservés (<exemple> a < b </exemple>)
+4. d) un mélange d’élément et de texte (<exemple>Ce texte en<b>gras</b></exemple>)
+
+**9) Un DTD est optionnel**
+
+1. a) oui, mais on ne peut alors plus s’assurer de la validité du XML
+2. b) non, il est obligatoire
+3. c) oui sur la version 1.1, mais non sur la version 1.0
+4. d) oui, mais on ne peut alors plus s’assurer que le XML est bien formé
+
+**10) Un DTD permet de**
+
+1. a) Transformer un document XML en un autre document texte
+2. b) vérifier si un document est bien formé
+3. c) faciliter l’encodage d’un document XML à l’aide d’auto-complétion
+4. d) Définir la structure d’un document et de s’assurer qu’un document XML est valide
+
+**11) XSD signifie**
+
+1. a) XML Structured Data
+2. b) XML Schema Definition
+3. c) eXtensible Style Declaration
+4. d) eXtensible System Domain
+
+**12) Il est possible de valider avec XSD un XML utilisant des namespaces**
+
+1. a) non, car XSD ne comprend pas la notion de namespace
+2. b) oui, même si XSD ne comprend pas la notion de namespace
+3. c) oui, car XSD comprend la notion de namespace
+4. d) non, même si XSD comprend la notion de namespace
+
+**13) XSD permet de contraindre le type des champs texte (entier, réel, date, …)**
+
+1. a) non, tout comme DTD
+2. b) Non, contrairement à DTD
+3. c) oui, tout comme DTD
+4. d) oui, contrairement à DTD
+
+**14) En XSD, pour définir un élément mixte, il faut :**
+
+1. a) indiquer « xs:mixed » comme type (simple ou de base dans une extension)
+2. b) ajouter « mixed= « true » » dans la déclaration du type complexe
+3. c) ne rien faire, les éléments ont tous la possibilité d’être mixtes
+4. d) ne rien faire, ce n’est tout simplement pas possible
+
+**15) En XSD les indicateurs permettent**
+
+1. a) de définir le caractère optionnel ou répétitif des éléments, un peu comme les opérateurs ?, +, *, | du DTD
+2. b) de signaler ou parser le sens de lecture du document
+3. c) d’indiquer la liste des valeurs possibles pour les éléments et attributs
+4. d) de vérifier que le XSD est bien valide
+
+**16) Fondamentalement, la méthode utilisée par SAX est de**
+
+1. a) Lire le fichier en continu et de lancer des évènements au fur et à mesure
+2. b) construire un arbre en mémoire
+3. c) transformer chaque caractère en sa valeur Unicode
+4. d) indiquer la sémantique de chaque nœud pour facilité la mise en page
+
+**17) Lorsqu’on redéfinit le ErrorHandler avec DOM, il faut gérer :**
+
+1. a) les exceptions de type SAXException
+2. b) les exceptions de type DOMException
+3. c) aucune exception, car le handler n’en génèrera pas avec le DOM
+4. d) rien, parce qu’on ne peut pas redéfinir le ErrorHandler avec DOM
+
+**18) Dans une expression XPath, l’axe sert à**
+
+1. a) faire une première sélection d’un nœud ou d’un ensemble de nœud
+2. b) rédiger une version abrégée de l’expression
+3. c) spécifier l’ID des nœuds qui seront exclus de la recherche
+4. d) définir l’ordre du document
+
+**19) L’utilité de XSLT est de**
+
+1. a) définir la structure d’un document XML
+2. b) cibler le XML pour en faire une unité de stockage
+3. c) implémenter le langage XPath
+4. d) Transformer un document XML en un autre document
+
+**20) Fondamentalement, XSLT**
+
+1. a) spécifie le LDD du fichier XML
+2. b) prend 2 arbres en entrée et fourni un arbre en sortie
+3. c) Documente le programme qui va l’exécuter
+4. d) indique le type de déploiement du XML
+
+**21) Si le chemin indiqué lors de la création d’un répertoire (DIRECTORY) est faux, alors**
+
+1. a) Il y aura une erreur au moment de la création
+2. b) il n’y aura pas d’erreur, le répertoire pointera vers un dossier par défaut
+3. c) il n’y aura pas d’erreur, le SGBD va choisir le dossier avec le nom le plus proche
+4. d) il y aura une erreur au moment de l’utilisation
+
+**22) Si je modifie le contenu d’un fichier pointé par une table externe**
+
+1. a) les modifications ne sont pas prises en compte
+2. b) je ne peux pas le modifier, il sera protégé en écriture
+3. c) les modifications sont immédiatement reprises au niveau de la BdD
+4. d) les modifications sont reprises lors du prochain redémarrage de l’ordinateur
+
+**23) Dans une table externe, le nombre de caractères considérés pour chaque champ est indiqué dans**
+
+1. a) le LOCATION
+2. b) le RECORD DELIMITED
+3. c) le MAX LENGTH
+4. d) les ACCESS PARAMETERS
+
+**24) Un BLOB est**
+
+1. a) un Bridge Locator Binder
+2. b) un Blank Output Base
+3. c) Un Binary Large Object
+4. d) un Big List Order By
+
+**25) Une base de données orientée objet diffère principalement d’une base de données relationnelle parce que la première**
+
+1. a) gère mieux les grandes quantités de données
+2. b) stocke les relations de manière explicite, et non implicite
+3. c) permet d’implémenter plus facilement un service REST
+4. d) Travaille avec des objets plutôt qu’avec des tables
+
+**26) Le mot clé DEREF permet**
+
+1. a) de définir le contenu d’un objet
+2. b) de différer une contrainte
+3. c) de simuler l’exécution d’une commande
+4. d) de récupérer le contenu pointé par une référence
+
+**27) Une transaction BASE est une transaction**
+
+1. a) Blockchain Advanced Secure Encryption
+2. b) Binary And String Encoded
+3. c) Basically Available, Soft-state, Eventually consistent
+4. d) Binded, Actually, Safe, Extensible
+
+**28) Le type de données conservées dans une base de données MongoDB est**
+
+1. a) XML
+2. b) JSON
+3. c) TXT
+4. d) CSV
+
+**29) Dans une base de données distribuées, la fragmentation horizontale consiste à :**
+
+1. a) partitionner la relation par rapport à ses tuples
+2. b) partitionner la relation par rapport à ses attributs
+3. c) partitionner la relation par rapport à son propriétaire
+4. d) partitionner la relation par rapport à son moteur
+
+**30) Dans une base de données distribuées, la conception descendante consiste à**
+
+1. a) faire une recherche locale d’abord, puis étendre aux autres bases de données
+2. b) partir des besoins décisionnels d’abord, et puis opérationnel ensuite
+3. c) réfléchir sur le schéma global d’abord, puis le décomposer en différents sites ensuite
+4. d) stocker les agrégats d’abord, puis décomposer en éléments uniques ensuite
+
+**31) Dans une base de données distribuées, la redondance est d’autant plus intéressante que :**
+
+1. a) il y a beaucoup de sélections et peu de modifications
+2. b) il y a peu de sélections et peu de modifications
+3. c) il y a beaucoup de sélections et beaucoup de modifications
+4. d) il y a peu de sélections et beaucoup de modifications
+
+**32) On s’assure de la légitimité d’une transaction bitcoin grâce à**
+
+1. a) la place du bloc dans la chaine
+2. b) la quantité d’utilisateurs qui valident la transaction
+3. c) la valeur du hash
+4. d) une signature faite avec une clé asymétrique
+
+**33) En REST, les verbes utilisés sont, par exemple**
+
+1. a) GET et POST
+2. b) SAX et DOM
+3. c) DTD et XSD
+4. d) SELECT et INSERT
+
+**34) La réponse d’un service REST peut être écrite en**
+
+1. a) HTML
+2. b) JSON
+3. c) XML
+4. d) les 3 réponses précédentes sont valides
+
+**35) ORDS signifie**
+
+1. a) Open Relational Disk Storage
+2. b) Our Return Does Suffer
+3. c) Occasionaly Reported Duty Storage
+4. d) Oracle Rest Data Service
+
+**36) Les paramètres d’une requête POST sont récupérés**
+
+1. a) il n’est pas possible de passer des paramètres en POST
+2. b) dans le body de la requête
+3. c) dans le header de la requête
+4. d) via une seconde requête qui suit directement la requête POST
+
+**37) Dans le contexte des data warehouses, ETL signifie**
+
+1. a) Extremely Transparent List
+2. b) Extract Transform Load
+3. c) Extensible Text Location
+4. d) Electronical Technology Learning
+
+**38) L’objectif premier d’un data warehouse est de :**
+
+1. a) stocker le maximum de données en vue de leur analyse future
+2. b) apporter une sécurité sur les données en les répliquant en de nombreux endroits
+3. c) Fournir des données analytiques aux décideurs non informaticiens et non statisticiens
+4. d) permettre un accès rapide aux données opérationnelles
+
+**39) OLAP signifie**
+
+1. a) Operation List And Produce
+2. b) Other Location After Parsing
+3. c) On Line Analytical Processing
+4. d) One Last Assisted Procedure
+
+**40) Dans un entrepôt de données, le fait d’agréger les données d’une dimension s’appelle :**
+
+1. a) le pivot
+2. b) le drill up
+3. c) le dicing
+4. d) le slicing
+
+---
+
+- REPONSES QCM
+    
+    # CORRIGÉ - ANCIEN EXAMEN
+    
+    1 → a
+    2 → a
+    3 → b
+    4 → c
+    5 → d
+    6 → b
+    7 → b
+    8 → c
+    9 → a
+    10 → d
+    11 → b
+    12 → c
+    13 → d
+    14 → b
+    15 → a
+    16 → a
+    17 → b
+    18 → a
+    19 → d
+    20 → b
+    21 → d
+    22 → c
+    23 → d
+    24 → c
+    25 → d
+    26 → d
+    27 → c
+    28 → b
+    29 → a
+    30 → c
+    31 → a
+    32 → d
+    33 → a
+    34 → d
+    35 → d
+    36 → b
+    37 → b
+    38 → c
+    39 → c
+    40 → b

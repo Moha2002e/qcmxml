@@ -1,0 +1,442 @@
+[
+  {
+    "id": 1,
+    "text": "l’ancêtre direct de XML est",
+    "options": {
+      "a": "SGML",
+      "b": "XHTML",
+      "c": "HTML",
+      "d": "MathML"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 2,
+    "text": "un élément peut être vide",
+    "options": {
+      "a": "Oui",
+      "b": "Oui, mais à condition qu’il ait au moins un attribut",
+      "c": "Oui, mais à condition qu’il ait au moins un attribut non optionnel",
+      "d": "Non"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 3,
+    "text": "un langage balisé est un langage",
+    "options": {
+      "a": "tellement bien défini qu’on ne peut pas se tromper (comme un chemin balisé)",
+      "b": "constitué de balises (tags) qui permettent de définir la structure avec les données",
+      "c": "qui permet instantanément la localisation du dispositif qui exécute le programme",
+      "d": "qui peut être étendu très facilement, car les balise ne sont pas prédéfinies"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 4,
+    "text": "Dans l’exemple <auteur ordre= \"1\">Bernard Werber</auteur>, ordre est",
+    "options": {
+      "a": "un élément",
+      "b": "une donnée",
+      "c": "un attribut",
+      "d": "une entité"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 5,
+    "text": "Une section CDATA est",
+    "options": {
+      "a": "une section contenant le code source d’un autre langage de programmation",
+      "b": "une section contenant du texte sans caractères spéciaux ([0-9][a-z][A-Z] uniquement)",
+      "c": "une section dans laquelle on souhaite désactiver la coloration syntaxique",
+      "d": "une section contenant du texte qui ne sera pas parsé"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 6,
+    "text": "Il est possible de valider avec un DTD un XML utilisant un(des) namespace(s)",
+    "options": {
+      "a": "oui, car le DTD comprend la notion de namespace",
+      "b": "oui avec une entourloupe car le DTD ne comprend pas la notion de namespace",
+      "c": "non, même si le DTD comprend la notion de namespace",
+      "d": "non, car le DTD ne comprend pas la notion de namespace"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 7,
+    "text": "Afin de déclarer un namespace, on l’insère comme attribut d’un élément, précédé de",
+    "options": {
+      "a": "template",
+      "b": "xmlns",
+      "c": "namespace",
+      "d": "xsi (ou xsd)"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 8,
+    "text": "Le contenu d’un élément NE PEUT PAS être",
+    "options": {
+      "a": "du texte vide (<exemple></exemple>)",
+      "b": "plusieurs éléments enfants (<ex><enft1>v1</enft1><enft2>v2</enft2></ex>)",
+      "c": "du texte avec des caractères réservés (<exemple> a < b </exemple>)",
+      "d": "un mélange d’élément et de texte (<exemple>Ce texte en<b>gras</b></exemple>)"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 9,
+    "text": "Un DTD est optionnel",
+    "options": {
+      "a": "oui, mais on ne peut alors plus s’assurer de la validité du XML",
+      "b": "non, il est obligatoire",
+      "c": "oui sur la version 1.1, mais non sur la version 1.0",
+      "d": "oui, mais on ne peut alors plus s’assurer que le XML est bien formé"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 10,
+    "text": "Un DTD permet de",
+    "options": {
+      "a": "Transformer un document XML en un autre document texte",
+      "b": "vérifier si un document est bien formé",
+      "c": "faciliter l’encodage d’un document XML à l’aide d’auto-complétion",
+      "d": "Définir la structure d’un document et de s’assurer qu’un document XML est valide"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 11,
+    "text": "XSD signifie",
+    "options": {
+      "a": "XML Structured Data",
+      "b": "XML Schema Definition",
+      "c": "eXtensible Style Declaration",
+      "d": "eXtensible System Domain"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 12,
+    "text": "Il est possible de valider avec XSD un XML utilisant des namespaces",
+    "options": {
+      "a": "non, car XSD ne comprend pas la notion de namespace",
+      "b": "oui, même si XSD ne comprend pas la notion de namespace",
+      "c": "oui, car XSD comprend la notion de namespace",
+      "d": "non, même si XSD comprend la notion de namespace"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 13,
+    "text": "XSD permet de contraindre le type des champs texte (entier, réel, date, …)",
+    "options": {
+      "a": "non, tout comme DTD",
+      "b": "Non, contrairement à DTD",
+      "c": "oui, tout comme DTD",
+      "d": "oui, contrairement à DTD"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 14,
+    "text": "En XSD, pour définir un élément mixte, il faut :",
+    "options": {
+      "a": "indiquer « xs:mixed » comme type (simple ou de base dans une extension)",
+      "b": "ajouter « mixed= « true » » dans la déclaration du type complexe",
+      "c": "ne rien faire, les éléments ont tous la possibilité d’être mixtes",
+      "d": "ne rien faire, ce n’est tout simplement pas possible"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 15,
+    "text": "En XSD les indicateurs permettent",
+    "options": {
+      "a": "de définir le caractère optionnel ou répétitif des éléments, un peu comme les opérateurs ?, +, *, | du DTD",
+      "b": "de signaler ou parser le sens de lecture du document",
+      "c": "d’indiquer la liste des valeurs possibles pour les éléments et attributs",
+      "d": "de vérifier que le XSD est bien valide"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 16,
+    "text": "Fondamentalement, la méthode utilisée par SAX est de",
+    "options": {
+      "a": "Lire le fichier en continu et de lancer des évènements au fur et à mesure",
+      "b": "construire un arbre en mémoire",
+      "c": "transformer chaque caractère en sa valeur Unicode",
+      "d": "indiquer la sémantique de chaque nœud pour facilité la mise en page"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 17,
+    "text": "Lorsqu’on redéfinit le ErrorHandler avec DOM, il faut gérer :",
+    "options": {
+      "a": "les exceptions de type SAXException",
+      "b": "les exceptions de type DOMException",
+      "c": "aucune exception, car le handler n’en génèrera pas avec le DOM",
+      "d": "rien, parce qu’on ne peut pas redéfinir le ErrorHandler avec DOM"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 18,
+    "text": "Dans une expression XPath, l’axe sert à",
+    "options": {
+      "a": "faire une première sélection d’un nœud ou d’un ensemble de nœud",
+      "b": "rédiger une version abrégée de l’expression",
+      "c": "spécifier l’ID des nœuds qui seront exclus de la recherche",
+      "d": "définir l’ordre du document"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 19,
+    "text": "L’utilité de XSLT est de",
+    "options": {
+      "a": "définir la structure d’un document XML",
+      "b": "cibler le XML pour en faire une unité de stockage",
+      "c": "implémenter le langage XPath",
+      "d": "Transformer un document XML en un autre document"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 20,
+    "text": "Fondamentalement, XSLT",
+    "options": {
+      "a": "spécifie le LDD du fichier XML",
+      "b": "prend 2 arbres en entrée et fourni un arbre en sortie",
+      "c": "Documente le programme qui va l’exécuter",
+      "d": "indique le type de déploiement du XML"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 21,
+    "text": "Si le chemin indiqué lors de la création d’un répertoire (DIRECTORY) est faux, alors",
+    "options": {
+      "a": "Il y aura une erreur au moment de la création",
+      "b": "il n’y aura pas d’erreur, le répertoire pointera vers un dossier par défaut",
+      "c": "il n’y aura pas d’erreur, le SGBD va choisir le dossier avec le nom le plus proche",
+      "d": "il y aura une erreur au moment de l’utilisation"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 22,
+    "text": "Si je modifie le contenu d’un fichier pointé par une table externe",
+    "options": {
+      "a": "les modifications ne sont pas prises en compte",
+      "b": "je ne peux pas le modifier, il sera protégé en écriture",
+      "c": "les modifications sont immédiatement reprises au niveau de la BdD",
+      "d": "les modifications sont reprises lors du prochain redémarrage de l’ordinateur"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 23,
+    "text": "Dans une table externe, le nombre de caractères considérés pour chaque champ est indiqué dans",
+    "options": {
+      "a": "le LOCATION",
+      "b": "le RECORD DELIMITED",
+      "c": "le MAX LENGTH",
+      "d": "les ACCESS PARAMETERS"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 24,
+    "text": "Un BLOB est",
+    "options": {
+      "a": "un Bridge Locator Binder",
+      "b": "un Blank Output Base",
+      "c": "Un Binary Large Object",
+      "d": "un Big List Order By"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 25,
+    "text": "Une base de données orientée objet diffère principalement d’une base de données relationnelle parce que la première",
+    "options": {
+      "a": "gère mieux les grandes quantités de données",
+      "b": "stocke les relations de manière explicite, et non implicite",
+      "c": "permet d’implémenter plus facilement un service REST",
+      "d": "Travaille avec des objets plutôt qu’avec des tables"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 26,
+    "text": "Le mot clé DEREF permet",
+    "options": {
+      "a": "de définir le contenu d’un objet",
+      "b": "de différer une contrainte",
+      "c": "de simuler l’exécution d’une commande",
+      "d": "de récupérer le contenu pointé par une référence"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 27,
+    "text": "Une transaction BASE est une transaction",
+    "options": {
+      "a": "Blockchain Advanced Secure Encryption",
+      "b": "Binary And String Encoded",
+      "c": "Basically Available, Soft-state, Eventually consistent",
+      "d": "Binded, Actually, Safe, Extensible"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 28,
+    "text": "Le type de données conservées dans une base de données MongoDB est",
+    "options": {
+      "a": "XML",
+      "b": "JSON",
+      "c": "TXT",
+      "d": "CSV"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 29,
+    "text": "Dans une base de données distribuées, la fragmentation horizontale consiste à :",
+    "options": {
+      "a": "partitionner la relation par rapport à ses tuples",
+      "b": "partitionner la relation par rapport à ses attributs",
+      "c": "partitionner la relation par rapport à son propriétaire",
+      "d": "partitionner la relation par rapport à son moteur"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 30,
+    "text": "Dans une base de données distribuées, la conception descendante consiste à",
+    "options": {
+      "a": "faire une recherche locale d’abord, puis étendre aux autres bases de données",
+      "b": "partir des besoins décisionnels d’abord, et puis opérationnel ensuite",
+      "c": "réfléchir sur le schéma global d’abord, puis le décomposer en différents sites ensuite",
+      "d": "stocker les agrégats d’abord, puis décomposer en éléments uniques ensuite"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 31,
+    "text": "Dans une base de données distribuées, la redondance est d’autant plus intéressante que :",
+    "options": {
+      "a": "il y a beaucoup de sélections et peu de modifications",
+      "b": "il y a peu de sélections et peu de modifications",
+      "c": "il y a beaucoup de sélections et beaucoup de modifications",
+      "d": "il y a peu de sélections et beaucoup de modifications"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 32,
+    "text": "On s’assure de la légitimité d’une transaction bitcoin grâce à",
+    "options": {
+      "a": "la place du bloc dans la chaine",
+      "b": "la quantité d’utilisateurs qui valident la transaction",
+      "c": "la valeur du hash",
+      "d": "une signature faite avec une clé asymétrique"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 33,
+    "text": "En REST, les verbes utilisés sont, par exemple",
+    "options": {
+      "a": "GET et POST",
+      "b": "SAX et DOM",
+      "c": "DTD et XSD",
+      "d": "SELECT et INSERT"
+    },
+    "correctAnswer": "a"
+  },
+  {
+    "id": 34,
+    "text": "La réponse d’un service REST peut être écrite en",
+    "options": {
+      "a": "HTML",
+      "b": "JSON",
+      "c": "XML",
+      "d": "les 3 réponses précédentes sont valides"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 35,
+    "text": "ORDS signifie",
+    "options": {
+      "a": "Open Relational Disk Storage",
+      "b": "Our Return Does Suffer",
+      "c": "Occasionaly Reported Duty Storage",
+      "d": "Oracle Rest Data Service"
+    },
+    "correctAnswer": "d"
+  },
+  {
+    "id": 36,
+    "text": "Les paramètres d’une requête POST sont récupérés",
+    "options": {
+      "a": "il n’est pas possible de passer des paramètres en POST",
+      "b": "dans le body de la requête",
+      "c": "dans le header de la requête",
+      "d": "via une seconde requête qui suit directement la requête POST"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 37,
+    "text": "Dans le contexte des data warehouses, ETL signifie",
+    "options": {
+      "a": "Extremely Transparent List",
+      "b": "Extract Transform Load",
+      "c": "Extensible Text Location",
+      "d": "Electronical Technology Learning"
+    },
+    "correctAnswer": "b"
+  },
+  {
+    "id": 38,
+    "text": "L’objectif premier d’un data warehouse est de :",
+    "options": {
+      "a": "stocker le maximum de données en vue de leur analyse future",
+      "b": "apporter une sécurité sur les données en les répliquant en de nombreux endroits",
+      "c": "Fournir des données analytiques aux décideurs non informaticiens et non statisticiens",
+      "d": "permettre un accès rapide aux données opérationnelles"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 39,
+    "text": "OLAP signifie",
+    "options": {
+      "a": "Operation List And Produce",
+      "b": "Other Location After Parsing",
+      "c": "On Line Analytical Processing",
+      "d": "One Last Assisted Procedure"
+    },
+    "correctAnswer": "c"
+  },
+  {
+    "id": 40,
+    "text": "Dans un entrepôt de données, le fait d’agréger les données d’une dimension s’appelle :",
+    "options": {
+      "a": "le pivot",
+      "b": "le drill up",
+      "c": "le dicing",
+      "d": "le slicing"
+    },
+    "correctAnswer": "b"
+  }
+]
