@@ -8,6 +8,7 @@ const allQuestions = questionsData;
 const questions = ref([]);
 const currentQuestionIndex = ref(0);
 const score = ref(0);
+const wrongAnswers = ref([]);
 const gameState = ref('series-select'); // 'series-select', 'intro', 'quiz', 'result'
 const currentSeries = ref(0);
 
@@ -36,11 +37,18 @@ const startQuiz = () => {
   gameState.value = 'quiz';
   currentQuestionIndex.value = 0;
   score.value = 0;
+  wrongAnswers.value = [];
 };
 
 const handleAnswer = (key) => {
   if (key === currentQuestion.value.correctAnswer) {
     score.value++;
+  } else {
+    wrongAnswers.value.push({
+      question: currentQuestion.value,
+      userAnswer: key,
+      correctAnswer: currentQuestion.value.correctAnswer
+    });
   }
   
   if (currentQuestionIndex.value < totalQuestions.value - 1) {
@@ -53,6 +61,7 @@ const handleAnswer = (key) => {
 const restartQuiz = () => {
   gameState.value = 'series-select';
   score.value = 0;
+  wrongAnswers.value = [];
   currentQuestionIndex.value = 0;
 };
 </script>
@@ -111,6 +120,7 @@ const restartQuiz = () => {
           key="result"
           :score="score"
           :total-questions="totalQuestions"
+          :wrong-answers="wrongAnswers"
           @restart="restartQuiz"
         />
       </transition>
