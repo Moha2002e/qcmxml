@@ -28,7 +28,13 @@ const selectSeries = (seriesId) => {
   const series = seriesList.find(s => s.id === seriesId);
   if (series) {
     currentSeries.value = seriesId;
-    questions.value = allQuestions.slice(series.range[0], series.range[1]);
+    // Create a copy and shuffle
+    const seriesQuestions = allQuestions.slice(series.range[0], series.range[1]);
+    for (let i = seriesQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [seriesQuestions[i], seriesQuestions[j]] = [seriesQuestions[j], seriesQuestions[i]];
+    }
+    questions.value = seriesQuestions;
     gameState.value = 'intro';
   }
 };

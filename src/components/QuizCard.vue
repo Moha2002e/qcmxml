@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 const props = defineProps({
   question: {
@@ -20,6 +20,24 @@ const emit = defineEmits(['answer']);
 
 const selectedOption = ref(null);
 const isAnswered = ref(false);
+const shuffledOptions = ref([]);
+
+watch(() => props.question, (newQuestion) => {
+  if (!newQuestion || !newQuestion.options) return;
+  
+  const optionsArray = Object.entries(newQuestion.options).map(([key, text]) => ({
+    key,
+    text
+  }));
+  
+  // Shuffle algorithm (Fisher-Yates)
+  for (let i = optionsArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [optionsArray[i], optionsArray[j]] = [optionsArray[j], optionsArray[i]];
+  }
+  
+  shuffledOptions.value = optionsArray;
+}, { immediate: true });
 
 const selectOption = (key) => {
   if (isAnswered.value) return; // Prevent changing answer
@@ -69,19 +87,19 @@ const getOptionClass = (key) => {
 
     <div class="options-grid">
       <button 
-        v-for="(text, key) in question.options" 
-        :key="key" 
+        v-for="(option, index) in shuffledOptions" 
+        :key="option.key" 
         class="option-btn"
-        :class="getOptionClass(key)"
-        @click="selectOption(key)"
+        :class="getOptionClass(option.key)"
+        @click="selectOption(option.key)"
         :disabled="isAnswered"
       >
-        <span class="option-key">{{ key.toUpperCase() }}</span>
-        <span class="option-text">{{ text }}</span>
+        <span class="option-key">{{ String.fromCharCode(65 + index) }}</span>
+        <span class="option-text">{{ option.text }}</span>
         
         <!-- Icons for status -->
-        <span v-if="isAnswered && key === question.correctAnswer" class="status-icon">✓</span>
-        <span v-if="isAnswered && key === selectedOption && key !== question.correctAnswer" class="status-icon">✗</span>
+        <span v-if="isAnswered && option.key === question.correctAnswer" class="status-icon">✓</span>
+        <span v-if="isAnswered && option.key === selectedOption && option.key !== question.correctAnswer" class="status-icon">✗</span>
       </button>
     </div>
 
