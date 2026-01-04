@@ -184,7 +184,7 @@
       "c": "aucune exception, car le handler n’en génèrera pas avec le DOM",
       "d": "rien, parce qu’on ne peut pas redéfinir le ErrorHandler avec DOM"
     },
-    "correctAnswer": "b"
+    "correctAnswer": "a"
   },
   {
     "id": 18,
